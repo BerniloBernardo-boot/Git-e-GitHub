@@ -1,60 +1,92 @@
 # 01 — O que é Git e GitHub
 
-> **Nível:** 🟢 Iniciante · **Objetivos:** distinguir Git de GitHub; definir repositório, commit, branch, remote, HEAD, staging area e working tree.
+> **Nível:** Iniciante · **Pré-requisitos:** nenhum · **Tempo estimado:** 45–60 min
+> **Objetivo:** distinguir Git de GitHub e definir com precisão repositório, commit, branch, remote, HEAD, staging area e working tree.
 
-## 1. Git vs. GitHub
+## 1. Definição
+
+> **Definição:** **Git** é um sistema de controlo de versões distribuído que guarda snapshots do teu projeto. **GitHub** é uma plataforma web que hospeda repositórios Git e adiciona colaboração (issues, pull requests, actions).
+
+**Finalidade:** o Git resolve o problema de "como voltar atrás, comparar versões e trabalhar em paralelo sem perder nada". O GitHub resolve "como partilhar esse histórico e colaborar com outras pessoas".
+
+## 2. Git vs. GitHub (comparação direta)
 
 | | Git | GitHub |
 |---|---|---|
-| O quê | Sistema de controlo de versões **distribuído** (software local) | Plataforma web para hospedar repositórios Git + colaboração |
-| Onde corre | Na tua máquina (`git` na linha de comandos) | Nos servidores da Microsoft / no browser |
+| O quê | Software local de controlo de versões | Plataforma web (servidores + interface) |
+| Onde corre | Na tua máquina (`git` no terminal) | No browser / servidores da Microsoft |
 | Precisa de internet? | Não (commits locais funcionam offline) | Sim |
-| Alternativas | — | GitLab, Bitbucket, Codeberg, Forgejo (auto-hospedado) |
+| Função | Guardar histórico | Hospedar, colaborar, automatizar |
+| Alternativas | Mercurial, SVN (raros hoje) | GitLab, Bitbucket, Codeberg, Forgejo |
 
 > [!TIP]
-> Podes usar Git sem GitHub (ex.: só localmente ou com outra forge). Não podes usar GitHub sem Git por baixo.
+> Podes usar Git sem GitHub (só localmente ou com outra plataforma). Não podes usar GitHub sem Git por baixo — todo o repositório no GitHub é um repositório Git.
 
-## 2. Conceitos fundamentais
+## 3. Conceitos fundamentais (um a um)
 
 ### Repositório
-Pasta com histórico versionado (a subpasta `.git/` guarda tudo: objetos, refs, logs).
+
+> **Definição:** pasta com histórico versionado. A subpasta `.git/` guarda tudo: objetos, referências, logs.
+
+**Analogia:** a pasta do projeto é a casa; o `.git/` é o arquivo da casa onde ficam todas as fotografias antigas.
 
 ### Commit
-Fotografia (snapshot) do projeto num momento. Cada commit tem:
-- hash SHA-1/SHA-256 único (ex.: `a3f1c9d...`),
-- autor + data,
-- mensagem,
-- apontador para o commit pai.
+
+> **Definição:** fotografia (snapshot) do projeto num momento. Cada commit tem hash único, autor, data, mensagem e apontador para o commit pai.
+
+**Antes / depois de um commit:** antes, as alterações vivem só no disco; depois, ficam guardadas permanentemente no histórico e podes voltar a elas a qualquer momento.
 
 ### Branch
-Apontador móvel para um commit. Permite linhas de desenvolvimento paralelas. Ver [[01-branches-switch-checkout|Branches]].
+
+> **Definição:** apontador móvel para um commit. Permite linhas de desenvolvimento paralelas sem copiar pastas.
+
+Ver lição completa em [[01-branches-switch-checkout|08 — Branches]].
 
 ### Remote
-Apelido de um repositório noutro local (ex.: `origin` → URL no GitHub). Ver [[01-repositorios-remotes-tags|Remotes]].
+
+> **Definição:** apelido de um repositório noutro local (ex.: `origin` aponta para o URL no GitHub).
+
+Ver lição completa em [[01-repositorios-remotes-tags|10 — Remotes]].
 
 ### HEAD
-Apontador para onde estás agora (normalmente, o último commit do branch atual).
 
-### Staging area (índice) e working tree
+> **Definição:** apontador para onde estás agora — normalmente, o último commit do branch atual.
+
+**Como funciona:** o HEAD segue-te quando mudas de branch ou de commit. Em `main` com 3 commits A → B → C, o HEAD aponta para C (através de `main`).
 
 ```mermaid
 flowchart LR
-    W[Working tree<br/>ficheiros que editas] -->|git add| S[Staging area<br/>o que vai no próximo commit]
-    S -->|git commit| R[(Repository<br/>histórico permanente)]
-    R -->|git checkout/switch<br/>git restore| W
+    A["Commit A"] --> B["Commit B"] --> C["Commit C"]
+    M["branch main"] --> C
+    H["HEAD"] --> M
 ```
 
-| Zona | O que é | Comando de inspeção |
+### Staging area (índice) e working tree
+
+> **Definição:** a **working tree** são os ficheiros que editas no disco; a **staging area** é a seleção do que vai no próximo commit; o **repository** é o histórico permanente em `.git/`.
+
+```mermaid
+flowchart LR
+    W["Working tree<br/>ficheiros que editas"] -->|"git add<br/>prepara"| S["Staging area<br/>o que vai no proximo commit"]
+    S -->|"git commit<br/>guarda"| R[("Repository<br/>historico em .git")]
+    R -->|"git checkout / switch<br/>git restore"| W
+```
+
+Leitura seta a seta: editas na working tree; `git add` prepara na staging; `git commit` guarda no repository; `switch`/`restore` repõem ficheiros da história para o disco.
+
+| Zona | O que é | Como inspecionar |
 |---|---|---|
 | Working tree | Ficheiros no disco | `git status` |
 | Staging area | Seleção do próximo commit | `git status`, `git diff --staged` |
 | Repository | Histórico (`.git/`) | `git log` |
 
-## 3. Como o Git guarda dados (modelo interno)
+## 4. Como o Git guarda dados (modelo interno)
+
+**Finalidade:** perceber porque o Git é rápido e porque criar branches é quase gratuito.
 
 - **Não guarda diffs por ficheiro** como sistemas antigos (SVN/CVS). Guarda **snapshots**: cada commit aponta para uma árvore completa.
 - Ficheiros idênticos entre commits são reutilizados (mesmo hash → mesmo objeto).
-- Tipos de objetos: `blob` (conteúdo), `tree` (diretoria), `commit`, `tag`.
+- Tipos de objetos: `blob` (conteúdo de ficheiro), `tree` (diretoria), `commit` (snapshot + metadados), `tag` (marca nomeada).
 
 ```mermaid
 gitGraph
@@ -66,15 +98,45 @@ gitGraph
     commit id: "D"
 ```
 
-## 4. Exercício rápido
+Leitura: `main` avançou A → B → D; `feature` divergiu de B para C. Cada letra é um snapshot completo, não apenas "o que mudou".
 
-1. Cria uma pasta `teste-git`, entra nela, corre `git init -b main`.
-2. Cria `nota.txt`, corre `git status` e observa em que zona está o ficheiro.
-3. Corre `git add nota.txt && git status` — o que mudou?
+**Regra de memória:** "Git guarda fotografias, não rascunhos de diferenças."
 
-## Critérios de conclusão
+## 5. Prática guiada
+
+1. Cria uma pasta `teste-git`, entra nela e corre `git init -b main`.
+2. Cria `nota.txt` com uma linha de texto; corre `git status` e identifica em que zona está o ficheiro (resposta: untracked, na working tree).
+3. Corre `git add nota.txt && git status` — o que mudou? (Resposta: foi para a staging area.)
+4. Desenha de memória o diagrama working tree → staging → repository e compara com o desta lição.
+
+## 6. Avaliação
+
+**Perguntas de compreensão:**
+
+1. Explica com palavras tuas a diferença entre Git e GitHub. Precisas de internet para fazer `git commit`?
+2. O que é o HEAD e para onde aponta depois de `git switch main`?
+3. Um branch é uma cópia dos ficheiros? Justifica com o modelo interno (apontador + snapshots).
+
+**Exercício prático:** num repo de teste, cria um ficheiro, prepara-o e faz commit; depois usa `git log --oneline` e `git status` para mostrar em que zona está cada informação.
+
+**Desafio de interpretação:** se `git status` mostra `nothing to commit, working tree clean`, o que isso diz sobre as três zonas? (Resposta: working tree igual ao HEAD, staging vazia, nada por guardar.)
+
+**Resumo visual:**
+
+| Conceito | É... | Vives nele via... |
+|---|---|---|
+| Working tree | Ficheiros no disco | editor + `git status` |
+| Staging area | Seleção do próximo commit | `git add`, `git diff --staged` |
+| Repository | Histórico em `.git/` | `git commit`, `git log` |
+| Branch | Apontador móvel | `git branch`, `git switch` |
+| HEAD | "Onde estou" | segue o branch atual |
+| Remote | Apelido do repo no GitHub | `git remote -v` |
+
+**Checklist de domínio:**
+
 - [ ] Explicas a diferença Git vs. GitHub sem hesitar.
-- [ ] Defines os 7 termos do glossário básico ([[01-glossario|Glossário]]).
+- [ ] Defines os 7 termos (repositório, commit, branch, remote, HEAD, staging area, working tree).
 - [ ] Desenhas de memória o diagrama working tree → staging → repository.
+- [ ] Explicas porque um branch é barato (apontador, não cópia).
 
-**Próximo:** [[02-Ciclo-de-vida-dos-ficheiros|Ciclo de vida dos ficheiros]] · **Relacionadas:** [[01-init-clone-status-add-commit|Comandos essenciais]]
+**Próximo:** [[02-Ciclo-de-vida-dos-ficheiros|02 — Ciclo de vida dos ficheiros]] · **Relacionadas:** [[01-init-clone-status-add-commit|05 — Comandos essenciais]]

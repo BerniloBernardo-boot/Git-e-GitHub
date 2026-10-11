@@ -4,23 +4,25 @@
 
 ## O que este repositório contém
 
-- 📚 **24 notas de estudo** organizadas em 15 módulos progressivos (iniciante → intermédio → avançado → profissional)
-- 🧭 **Todos os comandos explicados**: sintaxe, funcionamento interno, quando usar, exemplo executável, resultado esperado, erros frequentes, riscos (🟢 seguro / 🟡 cuidado / 🔴 destrutivo) e alternativas
-- 📊 **19 diagramas Mermaid**: ciclo de vida dos ficheiros, branches, merge vs. rebase, Pull Requests, conflitos, CI/CD e colaboração frontend ↔ backend
-- 👥 **Workflow de equipa pronto a usar** (pasta `08-Workflows-Profissionais`)
-- 🏋️ **Projetos práticos e 15 exercícios** com critérios de conclusão
-- ⚡ **Cheat-sheet** de referência rápida + **glossário** com 30 termos
+- **24 notas de estudo** organizadas em 15 módulos progressivos (iniciante → intermédio → avançado → profissional)
+- **Todos os comandos ensinados em 11 passos**: definição, finalidade, funcionamento interno, diagrama explicado, sintaxe parte a parte, demonstração linha por linha, antes/depois, prática, verificação, regra de memória e avaliação
+- **Diagramas Mermaid junto de cada conceito**: ciclo de vida dos ficheiros, working directory/staging/repository, branches, merge vs. rebase, fetch vs. pull, Pull Requests, conflitos, HEAD, CI/CD e colaboração frontend ↔ backend
+- **Avaliação em cada lição**: 3 perguntas de compreensão + exercício prático + desafio de interpretação + resumo visual + checklist de domínio
+- **Workflow de equipa pronto a usar** (pasta `08-Workflows-Profissionais`)
+- **Projetos práticos e 15 exercícios** com critérios de conclusão verificáveis
+- **Referência rápida** + **glossário** com 33 termos
+- **Padrão pedagógico** documentado em [PADRAO-PEDAGOGICO.md](PADRAO-PEDAGOGICO.md)
 
 ## Como estudar
 
 | Nível | Módulos | Objetivo |
 |---|---|---|
-| 🟢 Iniciante | 01 → 03 | Conceitos, instalação, primeiros commits |
-| 🟡 Intermédio | 04 → 07 | Branches, GitHub, PRs, conflitos |
-| 🟠 Avançado | 08 → 09 | Workflows, rebase, reset/reflog |
-| 🔴 Profissional | 10 → 11 | Segurança, CI/CD, projetos em equipa |
+| Iniciante | 01 → 03 | Conceitos, instalação, primeiros commits |
+| Intermédio | 04 → 07 | Branches, GitHub, PRs, conflitos |
+| Avançado | 08 → 09 | Workflows, rebase, reset/reflog |
+| Profissional | 10 → 11 | Segurança, CI/CD, projetos em equipa |
 
-**Começa aqui:** abre a nota `README-Obsidian.md` (índice navegável) ou entra em `01-Fundamentos/`.
+**Começa aqui:** abre a nota `README-Obsidian.md` (índice navegável) ou entra em `01-Fundamentos/`. Lê o [PADRAO-PEDAGOGICO.md](PADRAO-PEDAGOGICO.md) para entenderes como cada lição está estruturada.
 
 > [!NOTE]
 > Compatível com [Obsidian](https://obsidian.md) (links `[[...]]`, callouts e Mermaid funcionam nativamente — basta abrir esta pasta como vault). No GitHub, os ficheiros leem-se normalmente; os links internos usam sintaxe wiki do Obsidian.
@@ -48,7 +50,7 @@
 
 ### Nível profissional
 - [14 — Git Flow, GitHub Flow, trunk-based](08-Workflows-Profissionais/01-git-flow-github-flow-trunk-based.md)
-- [15 — Workflow real: Cuidar Angola ⭐](08-Workflows-Profissionais/02-Workflow-Cuidar-Angola.md)
+- [15 — Workflow real: Cuidar Angola](08-Workflows-Profissionais/02-Workflow-Cuidar-Angola.md)
 - [16 — reset, revert, reflog](09-Git-Avancado/01-reset-revert-reflog.md)
 - [17 — fetch, pull, push, remote (avançado)](09-Git-Avancado/02-fetch-pull-push-remote-avancado.md)
 - [18 — Conventional Commits, SemVer, CI/CD](10-Seguranca-e-Boas-Praticas/01-conventional-commits-semver-cicd.md)
@@ -57,7 +59,7 @@
 ### Prática e referência
 - [20 — Projetos práticos](11-Projetos-Praticos/01-projetos-progressivos.md)
 - [21 — Erros comuns](12-Erros-Comuns/01-erros-comuns-e-solucoes.md)
-- [22 — Referência rápida ⚡](13-Referencia-Rapida/01-cheat-sheet.md)
+- [22 — Referência rápida](13-Referencia-Rapida/01-cheat-sheet.md)
 - [23 — Exercícios](14-Exercicios/01-exercicios-por-nivel.md)
 - [24 — Glossário](15-Glossario/01-glossario.md)
 
@@ -65,13 +67,13 @@
 
 | Selo | Significado |
 |---|---|
-| 🟢 Seguro | Não altera histórico nem perde dados |
-| 🟡 Cuidado | Altera histórico local ou exige atenção |
-| 🔴 Destrutivo | Pode apagar dados permanentemente |
+| [SEGURO] | Não altera histórico nem perde dados |
+| [ATENCAO] | Altera histórico local ou exige atenção |
+| [DESTRUTIVO] | Pode apagar dados permanentemente |
 
 ## Contribuir
 
-Queres melhorar o guia? Lê o [CONTRIBUTING.md](CONTRIBUTING.md) — contributos via Pull Request são bem-vindos.
+Queres melhorar o guia? Lê o [CONTRIBUTING.md](CONTRIBUTING.md) — contributos via Pull Request são bem-vindos. Cada lição deve seguir o [PADRAO-PEDAGOGICO.md](PADRAO-PEDAGOGICO.md).
 
 ## Licença
 

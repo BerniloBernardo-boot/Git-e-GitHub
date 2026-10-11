@@ -1,6 +1,6 @@
 # Contribuir com o guia
 
-Obrigado por querer melhorar este material de estudo! 🙌
+Obrigado por querer melhorar este material de estudo!
 
 ## Como contribuir
 
@@ -12,9 +12,12 @@ Obrigado por querer melhorar este material de estudo! 🙌
 ## Regras de qualidade
 
 - Português claro; comandos e termos técnicos em inglês original.
+- Seguir o [PADRAO-PEDAGOGICO.md](PADRAO-PEDAGOGICO.md): definição → finalidade → funcionamento → diagrama explicado → sintaxe parte a parte → demonstração linha por linha → antes/depois → prática → verificação → memória → avaliação.
+- Sem emojis no corpo das lições; selos de risco como texto ([SEGURO]/[ATENCAO]/[DESTRUTIVO]).
 - Não inventar comportamentos de comandos — confirmar na [documentação oficial do Git](https://git-scm.com/docs).
+- Distinguir exemplos simulados de resultados observados.
 - Diagramas Mermaid têm de fazer parse (testar no Obsidian ou em <https://mermaid.live>).
-- Cada nota: autónoma, com links para notas relacionadas e sem conteúdo duplicado.
+- Cada nota termina com avaliação (3 perguntas + exercício + desafio + resumo + checklist) e links para notas relacionadas, sem conteúdo duplicado.
 - Sem segredos, tokens ou dados pessoais nos exemplos.
 
 ## Ideias bem-vindas

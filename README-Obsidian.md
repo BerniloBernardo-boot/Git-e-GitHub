@@ -1,15 +1,18 @@
 # Índice do guia (Obsidian)
 
 > Este ficheiro é o índice navegável dentro do Obsidian. No GitHub, o índice principal está no [README.md](README.md).
+> O padrão de ensino de cada lição está em [[PADRAO-PEDAGOGICO|Padrão pedagógico]].
 
-## Níveis
+## Percurso de aprendizagem
 
 | Nível | Módulos | Objetivo |
 |---|---|---|
-| 🟢 Iniciante | 01 → 03 | Entender conceitos, instalar, primeiros commits |
-| 🟡 Intermédio | 04 → 07 | Branches, GitHub, PRs, conflitos |
-| 🟠 Avançado | 08 → 09 | Workflows, rebase, reset/reflog |
-| 🔴 Profissional | 10 → 11 | Segurança, CI/CD, projetos em equipa |
+| Iniciante | 01 → 03 | Entender conceitos, instalar, primeiros commits |
+| Intermédio | 04 → 07 | Branches, GitHub, PRs, conflitos |
+| Avançado | 08 → 09 | Workflows, rebase, reset/reflog |
+| Profissional | 10 → 11 | Segurança, CI/CD, projetos em equipa |
+
+Regra: só avança de nível com os checklists de domínio cumpridos (não basta ler — responde e pratica).
 
 ## Notas
 
@@ -34,7 +37,7 @@
 
 ### Nível profissional
 - [[01-git-flow-github-flow-trunk-based|14 — Git Flow, GitHub Flow, trunk-based]]
-- [[02-Workflow-Cuidar-Angola|15 — Workflow real: Cuidar Angola ⭐]]
+- [[02-Workflow-Cuidar-Angola|15 — Workflow real: Cuidar Angola]]
 - [[01-reset-revert-reflog|16 — reset, revert, reflog]]
 - [[02-fetch-pull-push-remote-avancado|17 — fetch, pull, push, remote (avançado)]]
 - [[01-conventional-commits-semver-cicd|18 — Conventional Commits, SemVer, CI/CD]]
@@ -43,7 +46,7 @@
 ### Prática e referência
 - [[01-projetos-progressivos|20 — Projetos práticos]]
 - [[01-erros-comuns-e-solucoes|21 — Erros comuns]]
-- [[01-cheat-sheet|22 — Referência rápida ⚡]]
+- [[01-cheat-sheet|22 — Referência rápida]]
 - [[01-exercicios-por-nivel|23 — Exercícios]]
 - [[01-glossario|24 — Glossário]]
 
@@ -51,9 +54,9 @@
 
 | Selo | Significado |
 |---|---|
-| 🟢 Seguro | Não altera histórico nem perde dados |
-| 🟡 Cuidado | Altera histórico local ou exige atenção |
-| 🔴 Destrutivo | Pode apagar dados permanentemente |
+| [SEGURO] | Não altera histórico nem perde dados |
+| [ATENCAO] | Altera histórico local ou exige atenção |
+| [DESTRUTIVO] | Pode apagar dados permanentemente |
 
 > [!NOTE]
-> Exemplos verificados com Git 2.55 no Linux. Diferenças para Windows/macOS estão assinaladas onde relevante.
+> Exemplos verificados com Git recente no Linux; saídas marcadas como "exemplo simulado" são representativas, não cópias literais. Diferenças para Windows/macOS estão assinaladas onde relevante.
