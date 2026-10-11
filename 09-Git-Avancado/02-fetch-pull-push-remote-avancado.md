@@ -11,7 +11,7 @@
 
 ```mermaid
 flowchart LR
-    L["branch local<br/>feature-x"] <-->|"tracking / upstream<br/>git branch -vv"| U["origin/feature-x<br/>copia local do remoto"]
+    L["branch local<br/>feature-x"] <-->|"tracking / upstream<br/>git branch -vv"| U["origin/feature-x<br/>cópia local do remoto"]
     U <-->|"fetch / push"| R["GitHub"]
 ```
 

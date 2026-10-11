@@ -12,13 +12,13 @@
 ```mermaid
 flowchart LR
     subgraph Local
-    W["Working tree"] --- S["Staging"] --- H["Historico local<br/>main, feature"]
+    W["Working tree"] --- S["Staging"] --- H["Histórico local<br/>main, feature"]
     end
     subgraph GitHub
-    R["Historico remoto<br/>origin/main, ..."]
+    R["Histórico remoto<br/>origin/main, ..."]
     end
     H -->|"git push<br/>envia commits"| R
-    R -->|"git fetch<br/>observa, nao mexe"| H
+    R -->|"git fetch<br/>observa, não mexe"| H
     R -->|"git pull = fetch + merge/rebase<br/>integra"| H
 ```
 
@@ -52,7 +52,7 @@ sequenceDiagram
     participant L as Local
     participant R as Remote (GitHub)
     L->>R: git push (envia commits)
-    R->>L: git fetch (traz refs, nao mexe no trabalho)
+    R->>L: git fetch (traz refs, não mexe no trabalho)
     Note over L: git pull = fetch + merge/rebase
     R->>L: git pull (atualiza branch atual)
 ```

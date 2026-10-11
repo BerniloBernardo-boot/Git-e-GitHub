@@ -8,9 +8,9 @@
 ```mermaid
 flowchart TD
     Q{"Integrar em branch\npartilhado main/develop?"}
-    Q -->|sim| M["git merge<br/>seguro, preserva historia"]
-    Q -->|nao, atualizar a minha\nfeature privada| R["git rebase main<br/>linear, so local"]
-    Q -->|nao, trazer so\n1 commit especifico| C["git cherry-pick hash"]
+    Q -->|sim| M["git merge<br/>seguro, preserva história"]
+    Q -->|não, atualizar a minha\nfeature privada| R["git rebase main<br/>linear, só local"]
+    Q -->|não, trazer só\n1 commit específico| C["git cherry-pick hash"]
 ```
 
 **Regra de ouro:** reescreve só o que é só teu. O que já foi partilhado (`push`, PR aberto, `main`/`develop`) integra-se com `merge` ou `revert` — nunca com rebase forçado.

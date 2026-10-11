@@ -47,7 +47,7 @@ E a visão por zonas:
 ```mermaid
 flowchart LR
     W["Working tree<br/>untracked + modified"] <-->|"git add<br/>git restore --staged"| S["Staging area<br/>staged"]
-    S -->|"git commit"| R[("Historico .git<br/>unmodified")]
+    S -->|"git commit"| R[("Histórico .git<br/>unmodified")]
     R -->|"git push"| REM[("Remote / GitHub")]
     REM -->|"git fetch : observa<br/>git pull : integra"| R
 ```

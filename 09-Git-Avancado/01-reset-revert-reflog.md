@@ -7,9 +7,9 @@
 
 ```mermaid
 flowchart TD
-    Q{"O commit ja foi\npartilhado (push/PR)?"} -->|nao, so local| R["git reset --soft/mixed<br/>reescreve a vontade"]
+    Q{"O commit já foi\npartilhado (push/PR)?"} -->|não, só local| R["git reset --soft/mixed<br/>reescreve à vontade"]
     Q -->|sim, partilhado| V["git revert<br/>cria commit inverso, seguro"]
-    R --> G["emergencia? git reflog<br/>mostra tudo o que o HEAD fez"]
+    R --> G["emergência? git reflog<br/>mostra tudo o que o HEAD fez"]
     V --> G
 ```
 
@@ -117,7 +117,7 @@ git reset --hard d4e5f6    # recupera o commit "perdido"
 
 ```mermaid
 flowchart TD
-    Q{"Partilhado?"} -->|nao| R["reset soft/mixed"]
+    Q{"Partilhado?"} -->|não| R["reset soft/mixed"]
     Q -->|sim| V["revert"]
     R & V --> G["reflog como rede"]
 ```

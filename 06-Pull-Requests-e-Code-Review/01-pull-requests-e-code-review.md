@@ -18,7 +18,7 @@ sequenceDiagram
     A->>GH: push feature/* + abre PR p/ develop
     GH->>CI: corre testes/lint
     CI-->>GH: verde / vermelho
-    R->>GH: review (approve / request changes / comment)
+    R->>GH: revisão (aprovar / pedir alterações / comentar)
     GH->>GH: merge (merge/squash/rebase) após aprovações
     Note over A,GH: branch apagado após merge
 ```
@@ -116,8 +116,8 @@ pergunta: o que acontece se a API devolver 500 aqui?
 flowchart LR
     B["feature/* + push"] --> P["PR: base certa + template + Closes N"]
     P --> C["CI verde"]
-    C --> R["review + approve"]
-    R --> M["merge + delete branch"]
+    C --> R["revisão + aprovação"]
+    R --> M["merge + apagar branch"]
 ```
 
 **Checklist de domínio:**

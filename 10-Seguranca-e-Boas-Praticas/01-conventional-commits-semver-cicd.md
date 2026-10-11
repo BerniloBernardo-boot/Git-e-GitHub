@@ -62,8 +62,8 @@ BREAKING CHANGE: clientes devem enviar "nif" numérico; "nif_str" foi removido.
 flowchart LR
     P["push / PR"] --> L["lint"]
     L --> T["testes"]
-    T --> B["build"]
-    B -->|tag v* em main| DEP["deploy producao"]
+    T --> B["compilação"]
+    B -->|tag v* em main| DEP["deploy produção"]
 ```
 
 Regras:

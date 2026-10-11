@@ -92,9 +92,9 @@ jobs:
 flowchart LR
     D["push para feature/*"] --> PR["Pull Request"]
     PR --> CI{"CI verde?"}
-    CI -->|nao| F["corrigir"]
+    CI -->|não| F["corrigir"]
     F --> PR
-    CI -->|sim| RV["review + approve"]
+    CI -->|sim| RV["revisão + aprovação"]
     RV --> M["merge para main"]
     M --> REL["release/tag"]
 ```

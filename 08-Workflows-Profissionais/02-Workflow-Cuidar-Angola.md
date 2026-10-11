@@ -16,10 +16,10 @@
 gitGraph
     commit id: "v1.0 prod" tag: "v1.0.0"
     branch develop
-    commit id: "integracao"
+    commit id: "integração"
     branch feature/cadastro-utentes
     commit id: "form"
-    commit id: "validacao"
+    commit id: "validação"
     checkout develop
     merge feature/cadastro-utentes id: "PR 5"
     branch feature/api-agendamentos
@@ -37,7 +37,7 @@ sequenceDiagram
     participant FE as "Frontend (feature/ui-agenda)"
     participant BE as "Backend (feature/api-agenda)"
     participant D as develop
-    participant M as "main (producao)"
+    participant M as "main (produção)"
     BE->>D: PR 1 — endpoint GET /agendamentos (contrato da API)
     D->>FE: atualiza develop e FE faz merge na sua feature
     FE->>D: PR 2 — UI consome o endpoint (mock até ao merge de BE)
@@ -114,11 +114,11 @@ git push origin v1.1.0
 
 ```mermaid
 flowchart LR
-    D["develop estavel"] --> PR["PR develop → main"]
-    PR --> CI{"CI + review"}
+    D["develop estável"] --> PR["PR develop → main"]
+    PR --> CI{"CI + revisão"}
     CI --> M["merge em main"]
     M --> T["tag vX.Y.Z + release"]
-    T --> DEP["deploy producao"]
+    T --> DEP["deploy produção"]
     DEP --> MON["monitorizar + hotfix se preciso"]
 ```
 

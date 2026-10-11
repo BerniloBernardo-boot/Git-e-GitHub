@@ -22,7 +22,7 @@
 gitGraph
     commit id: "v1.0"
     branch develop
-    commit id: "integracao"
+    commit id: "integração"
     branch feature/A
     commit id: "trabalho"
     checkout develop
@@ -68,10 +68,10 @@ Leitura: `feature/A` nasce de `develop` e volta via merge; `release/1.1` estabil
 ```mermaid
 flowchart TD
     Q1{"Precisas de releases versionadas\nparalelas ao desenvolvimento?"} -->|sim| GF["Git Flow"]
-    Q1 -->|nao| Q2{"Deploys continuos\nde main?"}
-    Q2 -->|sim, equipa pequena/media| GHF["GitHub Flow"]
-    Q2 -->|sim, varios deploys/dia\n+ CI maduro| TBD["Trunk-based"]
-    Q2 -->|nao, trabalho simples| GHF
+    Q1 -->|não| Q2{"Deploys contínuos\nde main?"}
+    Q2 -->|sim, equipa pequena/média| GHF["GitHub Flow"]
+    Q2 -->|sim, vários deploys/dia\n+ CI maduro| TBD["Trunk-based"]
+    Q2 -->|não, trabalho simples| GHF
 ```
 
 > [!TIP]

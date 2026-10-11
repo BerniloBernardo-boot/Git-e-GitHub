@@ -12,8 +12,8 @@
 ```mermaid
 flowchart LR
     W["Working tree"] -->|"git diff<br/>o que falta preparar"| S["Staging"]
-    S -->|"git diff --staged<br/>o que vai commitar"| H["HEAD<br/>ultimo commit"]
-    H -->|"git log<br/>historia para tras"| P["Commits pais"]
+    S -->|"git diff --staged<br/>o que vai no commit"| H["HEAD<br/>último commit"]
+    H -->|"git log<br/>história para trás"| P["Commits anteriores"]
     H -->|"git show<br/>este commit em detalhe"| D["metadados + diff"]
 ```
 

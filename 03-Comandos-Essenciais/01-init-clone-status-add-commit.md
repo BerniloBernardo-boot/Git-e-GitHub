@@ -7,8 +7,8 @@
 
 ```mermaid
 flowchart TD
-    A["Working Directory<br/>Ficheiros que editas"] -->|"git add<br/>prepara"| B["Staging Area<br/>O que vai no proximo commit"]
-    B -->|"git commit<br/>guarda"| C["Local Repository<br/>Historico permanente"]
+    A["Working Directory<br/>Ficheiros que editas"] -->|"git add<br/>prepara"| B["Staging Area<br/>O que vai no próximo commit"]
+    B -->|"git commit<br/>guarda"| C["Local Repository<br/>Histórico permanente"]
     C -->|"git push<br/>publica"| D["Remote Repository<br/>GitHub"]
     D -->|"git fetch : observa<br/>git pull : integra"| C
 ```
@@ -230,7 +230,7 @@ Lê-se assim: criado o commit `a1b2c3d` em `main`, com 1 ficheiro alterado.
 
 ```mermaid
 flowchart LR
-    W["Working Directory<br/>editar"] -->|"git add<br/>prepara (nao guarda)"| S["Staging Area<br/>revisto com git diff --staged"]
+    W["Working Directory<br/>editar"] -->|"git add<br/>prepara (não guarda)"| S["Staging Area<br/>revisto com git diff --staged"]
     S -->|"git commit<br/>guarda snapshot local"| R["Local Repository<br/>revisto com git log"]
     R -->|"git push<br/>publica"| GH["GitHub"]
 ```

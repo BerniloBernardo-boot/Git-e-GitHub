@@ -12,7 +12,7 @@
 ```mermaid
 flowchart TB
     S["merge / rebase / pull"] --> C{"conflito?"}
-    C -->|nao| OK["integracao concluida"]
+    C -->|não| OK["integração concluída"]
     C -->|sim| M["ficheiros marcados + marcadores"]
     M --> E["editar: escolher/combinar"]
     E --> A["git add ficheiros resolvidos"]

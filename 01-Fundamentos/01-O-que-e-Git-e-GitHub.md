@@ -67,8 +67,8 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    W["Working tree<br/>ficheiros que editas"] -->|"git add<br/>prepara"| S["Staging area<br/>o que vai no proximo commit"]
-    S -->|"git commit<br/>guarda"| R[("Repository<br/>historico em .git")]
+    W["Working tree<br/>ficheiros que editas"] -->|"git add<br/>prepara"| S["Staging area<br/>o que vai no próximo commit"]
+    S -->|"git commit<br/>guarda"| R[("Repository<br/>histórico em .git")]
     R -->|"git checkout / switch<br/>git restore"| W
 ```
 
