@@ -1,0 +1,14 @@
+# Ficheiros do sistema e editores (não versionar)
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backups de editores
+*~
+*.swp
+*.swo
+*.bak
+
+# Obsidian (se abrires esta pasta como vault separado)
+.obsidian/workspace.json
+.obsidian/cache/
